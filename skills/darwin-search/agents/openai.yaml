@@ -1,0 +1,4 @@
+interface:
+  display_name: "Darwin Search"
+  short_description: "Find public AI and capability matches with Darwin."
+  default_prompt: "Search Darwin for capabilities that match my request."

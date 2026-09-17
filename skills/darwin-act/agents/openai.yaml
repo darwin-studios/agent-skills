@@ -1,0 +1,4 @@
+interface:
+  display_name: "Darwin Act"
+  short_description: "Coordinate approved work through Darwin."
+  default_prompt: "Use Darwin to coordinate this outcome after confirming the exact capability and approval boundary."

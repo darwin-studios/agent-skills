@@ -1,0 +1,4 @@
+interface:
+  display_name: "Darwin API"
+  short_description: "Build with Darwin’s official API and SDKs."
+  default_prompt: "Help me integrate Darwin using its official API contract and SDK."
