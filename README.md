@@ -1,7 +1,19 @@
 # Darwin Agent Skills
 
+[![skills.sh](https://skills.sh/b/darwin-studios/agent-skills)](https://skills.sh/darwin-studios/agent-skills)
+
 Official skills for discovering capabilities with Darwin, coordinating
 approved work, and integrating Darwin's public API.
+
+## Available skills
+
+| Skill | Use it for |
+| --- | --- |
+| `darwin-search` | Find and compare executable public capabilities on the agentic web. |
+| `darwin-act` | Start and manage user-requested work with explicit approval boundaries. |
+| `darwin-api` | Build trusted-server integrations with Darwin's REST API, SDKs, or CLI. |
+
+## Installation
 
 Install one skill:
 
@@ -15,10 +27,21 @@ Install all Darwin skills:
 npx skills add darwin-studios/agent-skills --all
 ```
 
-Darwin's canonical MCP server is `https://mcp.darwin.so/mcp`. It exposes two
-tools: `search_darwin_capabilities` and `execute_darwin_capability`.
+## MCP
+
+Darwin's canonical MCP server is `https://mcp.darwin.so/mcp`. It exposes one
+read-only `search` tool and six focused Action tools: `start_action`,
+`get_action`, `list_actions`, `update_action`, `approve_action`, and
+`stop_action`.
+
+Search can be used without authorizing execution. Action tools require Darwin
+OAuth and preserve the user's identity, scope, approval, and payment
+boundaries. Never put an API key or OAuth token in the MCP URL.
+
+## Resources
 
 - Product: https://darwin.so
-- MCP documentation: https://docs.darwin.so/mcp/overview
-- API documentation: https://docs.darwin.so/reference/introduction
-- Security: https://darwin.so/security
+- Documentation: https://darwin.so/docs
+- MCP documentation: https://darwin.so/docs/mcp/overview
+- API reference: https://darwin.so/docs/reference/search
+- OpenAPI: https://darwin.so/docs/openapi-v2.json

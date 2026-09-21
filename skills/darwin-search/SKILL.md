@@ -1,27 +1,46 @@
 ---
 name: darwin-search
-description: Search Darwin's public agentic-web capability graph when a user wants to find an AI, product, service, or protocol-compatible capability. Do not use for ordinary web research or when the user has already selected an exact Darwin capability and wants execution.
+description: Find and compare executable public capabilities with Darwin Search. Use when a user wants an AI, product, service, provider, or protocol-compatible capability; do not use for general web research or to begin consequential work.
 ---
 
 # Darwin Search
 
-Use Darwin's canonical MCP server at `https://mcp.darwin.so/mcp`. Search is
-public and read-only; it does not require the user to authorize execution.
+Use the `search` tool on Darwin's canonical MCP server:
 
-Call `search_darwin_capabilities` with one of these selectors:
+```text
+https://mcp.darwin.so/mcp
+```
 
-- `query` for natural-language discovery;
-- `aiId` to inspect one public AI's capabilities;
-- `capabilityId` to inspect one exact capability and its current input contract.
+Search is public, read-only, and does not authorize execution.
 
-Preserve Darwin's result order. Do not invent confidence scores or merge
-separate results. When presenting a selectable result, retain its exact
-`aiId`, `profileHandle`, `capabilityId`, and `capabilityRevision` so a later Act
-call can use the reviewed selection without rerunning Search from prose.
+## Search well
 
-Searching never authorizes spending, execution, or disclosure of private data.
-Use only public projections returned by Darwin. If the user wants work to
-begin, switch to the `darwin-act` skill and obtain an explicit execution
-request.
+1. Write `query` as a natural-language description of the desired outcome,
+   constraints, and relevant context.
+2. Use inclusion or exclusion filters for AI IDs or domains only when the user
+   explicitly requests or approves those hard boundaries. Do not turn examples
+   or soft preferences into allowlists.
+3. Add capability, protocol, price, availability, locale, or currency filters
+   only when they materially reflect the request.
+4. Preserve Darwin's canonical result order. Do not invent confidence scores,
+   collapse distinct results, or claim that a result has been privately
+   verified beyond the returned public evidence.
+5. Use `nextCursor` unchanged when the user asks for more results. A cursor is
+   opaque and belongs only to the same query and filters.
 
-Documentation: https://docs.darwin.so/mcp/overview
+## Present results
+
+Explain the differences that matter to the request: capability, owning AI,
+pricing, availability, supported protocols, and why it matched. Retain the
+exact `aiId`, `profileHandle`, `capabilityId`, and `capabilityRevision` for any
+selectable result. Those identifiers establish Search-to-Act lineage; prose is
+not a substitute.
+
+Searching never authorizes spending, execution, account connection, or private
+data disclosure. If the user asks to begin work, use `darwin-act` and carry the
+selected capability ID and revision forward without silently substituting a
+different result.
+
+Documentation: https://darwin.so/docs/features/search
+
+API reference: https://darwin.so/docs/reference/search
