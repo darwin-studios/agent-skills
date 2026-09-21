@@ -11,7 +11,7 @@ approved work, and integrating Darwin's public API.
 | --- | --- |
 | `darwin-search` | Find and compare executable public capabilities on the agentic web. |
 | `darwin-act` | Start and manage user-requested work with explicit approval boundaries. |
-| `darwin-api` | Build trusted-server integrations with Darwin's REST API, SDKs, or CLI. |
+| `darwin-api` | Build trusted-server integrations and manage API keys through Darwin's public REST API, SDKs, or CLI. |
 
 ## Installation
 
@@ -44,4 +44,5 @@ boundaries. Never put an API key or OAuth token in the MCP URL.
 - Documentation: https://darwin.so/docs
 - MCP documentation: https://darwin.so/docs/mcp/overview
 - API reference: https://darwin.so/docs/reference/search
+- Account API-key reference: https://darwin.so/docs/reference/account-api-key-create
 - OpenAPI: https://darwin.so/docs/openapi-v2.json

@@ -66,4 +66,17 @@ for (const tool of requiredTools) {
   if (!readme.includes(`\`${tool}\``)) throw new Error(`README.md does not document ${tool}.`);
 }
 
+const apiSkill = await readFile(resolve(skillsRoot, 'darwin-api', 'SKILL.md'), 'utf8');
+const accountOperations = [
+  'POST /account/api-keys',
+  'GET /account/api-keys',
+  'GET /account/api-keys/usage',
+  'DELETE /account/api-keys/{apiKeyId}',
+];
+for (const operation of accountOperations) {
+  if (!apiSkill.includes(`\`${operation}\``)) {
+    throw new Error(`darwin-api/SKILL.md does not document ${operation}.`);
+  }
+}
+
 console.log(`Validated ${skillDirectories.length} Darwin skills and ${publicFiles.length} public files.`);
