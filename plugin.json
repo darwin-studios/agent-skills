@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "darwin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Official skills for Darwin Search, Act, and API integrations.",
   "author": {
     "name": "Darwin",

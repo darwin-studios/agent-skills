@@ -29,16 +29,22 @@ Before calling `start_action`:
 - `get_action` reads the current state and is the universal recovery path after
   a connection, checkout, approval, disconnect, or client interruption.
 - `list_actions` lists the caller's current nonterminal work.
-- `update_action` supplies clarification or bounded feedback. It never implies
+- `continue_action` supplies clarification or bounded feedback. It never implies
   approval.
+- `authenticate_session` establishes or reuses the exact destination
+  relationship advertised by Darwin. Complete sensitive work only through a
+  Darwin-controlled `webLink`.
+- `pay_action` accepts only the exact server-bound payment interaction. Confirm
+  its amount, currency, route, scope, and expiry with the user before calling it.
 - `approve_action` submits only the exact decision the user made against the
   reviewed approval ID, revision, and digest. Ordinary chat text is not an
   approval.
-- `stop_action` stops the current queued or running turn; do not claim that it
-  canceled a broader transaction unless Darwin explicitly says so.
+- `end_action` closes the durable Action with `finish` or `cancel`. The caller
+  never supplies an outcome, and cancellation does not imply that an external
+  charge, booking, delivery, or transaction was reversed.
 
 Treat returned state literally. `running`, `awaiting_user`,
-`approval_required`, `connection_required`, `payment_required`,
+`approval_required`, `authentication_required`, `payment_required`,
 `insufficient_authority`, and `provider_unavailable` are nonterminal. Follow a
 Darwin first-party `webLink` when present, then call `get_action`; opening the
 link alone does not complete the work. Use only operations listed in

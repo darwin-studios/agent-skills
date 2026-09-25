@@ -55,12 +55,16 @@ for (const path of publicFiles) {
 
 const requiredTools = [
   'search',
+  'get_account',
+  'list_search_history',
   'start_action',
   'get_action',
   'list_actions',
-  'update_action',
+  'continue_action',
+  'authenticate_session',
+  'pay_action',
   'approve_action',
-  'stop_action',
+  'end_action',
 ];
 for (const tool of requiredTools) {
   if (!readme.includes(`\`${tool}\``)) throw new Error(`README.md does not document ${tool}.`);

@@ -29,10 +29,10 @@ npx skills add darwin-studios/agent-skills --all
 
 ## MCP
 
-Darwin's canonical MCP server is `https://mcp.darwin.so/mcp`. It exposes one
-read-only `search` tool and six focused Action tools: `start_action`,
-`get_action`, `list_actions`, `update_action`, `approve_action`, and
-`stop_action`.
+Darwin's canonical MCP server is `https://mcp.darwin.so/mcp`. It exposes eleven
+focused tools: `search`, `get_account`, `list_search_history`, `start_action`,
+`get_action`, `list_actions`, `continue_action`, `authenticate_session`,
+`pay_action`, `approve_action`, and `end_action`.
 
 Search can be used without authorizing execution. Action tools require Darwin
 OAuth and preserve the user's identity, scope, approval, and payment

@@ -19,8 +19,9 @@ Use an official published release that matches the API contract being
 integrated. Do not copy unreleased preview code from Darwin's private monorepo
 or assume a preview surface has reached npm or PyPI.
 
-The public v2 API is intentionally small: one Search operation, six focused
-Action operations, and four account-session operations for API-key management.
+The public v2 API is intentionally small: one Search operation, focused Action
+operations, and bounded account, application, API-key, and Search-history
+operations.
 Use Search to obtain exact `capabilityId` and `capabilityRevision` values, then
 pass those values to Action. Do not reconstruct an execution request from
 display text or call private host, provider, or internal runtime routes.

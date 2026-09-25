@@ -6,9 +6,10 @@ Act, account API-key management, API, SDK, and CLI contracts.
 
 - Do not add secrets, tokens, user identifiers, private endpoints, or internal
   service names.
-- Keep Darwin MCP documented as exactly seven focused tools: `search` plus
-  `start_action`, `get_action`, `list_actions`, `update_action`,
-  `approve_action`, and `stop_action`.
+- Keep Darwin MCP documented as exactly eleven focused tools: `search`,
+  `get_account`, `list_search_history`, `start_action`, `get_action`,
+  `list_actions`, `continue_action`, `authenticate_session`, `pay_action`,
+  `approve_action`, and `end_action`.
 - Treat Search as read-only and Act as consequential, idempotent execution that
   preserves Darwin's OAuth and approval boundaries.
 - Verify public URLs before changing a skill and validate every changed
